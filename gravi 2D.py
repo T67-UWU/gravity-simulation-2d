@@ -1,7 +1,7 @@
 import math, pyxel, random
 
 G = 6.6743e-11
-G = 6.6743e-6
+G = 0.1
 dt = 1
 
 class rond:
@@ -56,9 +56,9 @@ class rond:
 class jeu:
     def __init__(self):
         pyxel.init(500, 500, title="gravite", fps=60)
-        self.planete1 = rond(50000000, 50)
+        self.planete1 = rond(5000, 50, v=3)
         self.planete3 = rond(10, 50, tkt=150)
-        self.planete2 = rond(50000000, 250, 250)
+        self.planete2 = rond(5000, 290, 250)
         self.i = 0
         self.l = [self.planete1, self.planete2, self.planete3]
         pyxel.run(self.update, self.draw)
